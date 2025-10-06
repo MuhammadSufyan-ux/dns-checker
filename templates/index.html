@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Domain Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-globe"></i>
+                <span>Domain Analyzer</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Professional Domain Analysis Tool</h1>
+            <p>Check domain availability, WHOIS data, and technical information with our advanced analyzer</p>
+            
+            <div class="search-container">
+                <input type="text" id="domainInput" placeholder="Enter domain name (example.com)">
+                <button id="checkDomainBtn">
+                    <i class="fas fa-search"></i> Analyze Domain
+                </button>
+            </div>
+            
+            <div class="tld-buttons">
+                <span>Quick TLDs:</span>
+                <button class="tld-btn" data-tld=".com">.com</button>
+                <button class="tld-btn" data-tld=".org">.org</button>
+                <button class="tld-btn" data-tld=".net">.net</button>
+                <button class="tld-btn" data-tld=".io">.io</button>
+                <button class="tld-btn" data-tld=".dev">.dev</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section" id="resultsSection">
+        <div class="container">
+            <div class="section-header">
+                <h2>Domain Analysis Results</h2>
+                <p id="statusText">Enter a domain name to begin analysis</p>
+            </div>
+            
+            <div class="progress-container" id="progressContainer">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            
+            <div class="results-container">
+                <div class="result-tabs">
+                    <button class="tab-btn active" data-tab="overview">Overview</button>
+                    <button class="tab-btn" data-tab="whois">WHOIS Data</button>
+                    <button class="tab-btn" data-tab="technical">Technical Info</button>
+                </div>
+                
+                <div class="tab-content">
+                    <div id="overview" class="tab-pane active">
+                        <div class="result-card">
+                            <pre id="overviewResult">No data yet. Enter a domain name to analyze.</pre>
+                        </div>
+                    </div>
+                    
+                    <div id="whois" class="tab-pane">
+                        <div class="result-card">
+                            <pre id="whoisResult">No WHOIS data available yet.</pre>
+                        </div>
+                    </div>
+                    
+                    <div id="technical" class="tab-pane">
+                        <div class="result-card">
+                            <pre id="technicalResult">No technical data available yet.</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Domain Analyzer</h3>
+                <p>Professional tool for domain analysis and WHOIS information.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 Domain Analyzer Tool. Developed by <strong>Muhammad Sufyan</strong>. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
